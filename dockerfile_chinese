@@ -1,0 +1,14 @@
+# Extend the official Rasa SDK image
+FROM rasa/rasa:latest
+
+# Add a custom system library (e.g. git)
+RUN apt-get update && \
+    apt-get install -y git
+
+# Add a custom python library (e.g. jupyter)
+RUN pip install jieba
+
+#How to Run?
+#docker build . -t RasaImg:latest
+#docker run -v %cd%:/app ,. RasaImg --no-prompt
+#docker run -it -v %cd%:/app RasaImg shell
