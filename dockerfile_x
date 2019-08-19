@@ -1,0 +1,13 @@
+FROM rasa/rasa:latest
+
+RUN pip install jieba
+RUN pip install rasa-x --extra-index-url https://pypi.rasa.com/simple
+SHELL ["/bin/bash", "-c"]
+
+
+WORKDIR /app
+#remark for add model into image
+#COPY model .
+
+
+
